@@ -10,6 +10,11 @@
 .springBeans
 .sts4-cache
 
+.idea
+.project
+.vscode
+springbootdemo.iml
+
 
 # Created by https://www.gitignore.io/api/git,java,maven,eclipse,windows
 
