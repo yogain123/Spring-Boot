@@ -17,6 +17,8 @@ import com.howtodoinjava.rest.dao.EmployeeDAO;
 import com.howtodoinjava.rest.model.Employee;
 import com.howtodoinjava.rest.model.Employees;
 
+// ----------Ignore Start -----------
+
 class Cust {
     String name;
 
@@ -33,6 +35,7 @@ class Cust {
         this.name = name;
     }
 }
+// ----------Ignore End -----------
 
 @RestController
 @RequestMapping(path = "/employees")
@@ -43,11 +46,13 @@ public class EmployeeController {
 
     @GetMapping(path = "/", produces = "application/json")
     public Employees getEmployees() {
+        // ----------Ignore Start -----------
         Gson gson = new Gson();
         String result = gson.toJson(new Cust("yogendra"));
         System.out.println("result is" + result);
         Cust cc = gson.fromJson(result, Cust.class);
         System.out.println(cc.toString());
+        // ----------Ignore Ends -----------
         return employeeDao.getAllEmployees();
     }
 
